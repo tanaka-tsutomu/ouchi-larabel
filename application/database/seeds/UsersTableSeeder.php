@@ -12,6 +12,7 @@ class UsersTableSeeder extends Seeder
             'name' => '顧客',
             'email' => 'user@a.com',
             'password' => Hash::make('pass'),
+            'image_path' => 'test',
             'created_at' => new Datetime(),
         ]);
         $fake = Fake::create('ja_JP');
@@ -20,6 +21,7 @@ class UsersTableSeeder extends Seeder
                 'name' => $fake->name,
                 'email' => $fake->email,
                 'password' => Hash::make('pass'),
+                'image_path' => 'test',
                 'created_at' => new Datetime(),
             ]);
         }
