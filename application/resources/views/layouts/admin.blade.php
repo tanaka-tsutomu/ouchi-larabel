@@ -21,7 +21,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">{{ config('app.name', 'Laravel') }}</a>
+    <a class="navbar-brand" href="home">{{ config('app.name', 'Laravel') }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,13 +51,23 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            メニュー1
+                        <a class="nav-link" href="products">
+                            商品管理画面
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            メニュー2
+                        <a class="nav-link" href="product_categories">
+                            商品カテゴリ管理画面
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="users">
+                            顧客管理画面
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_users">
+                            管理者管理画面
                         </a>
                     </li>
                 </ul>

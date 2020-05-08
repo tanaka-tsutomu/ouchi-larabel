@@ -29,6 +29,10 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
     Route::middleware('auth:admin')->group(function () {
         Route::post('logout', 'LoginController@logout')->name('logout');
         Route::get('home', 'HomeController@index')->name('home');
+        Route::get('products', 'ProductsController@index')->name('products');
+        Route::get('product_categories', 'ProductCategoriesController@index')->name('product_categories');
+        Route::get('users', 'UsersController@index')->name('users');
+        Route::get('admin_users', 'AdminUsersController@index')->name('admin_users');
     });
 });
 
