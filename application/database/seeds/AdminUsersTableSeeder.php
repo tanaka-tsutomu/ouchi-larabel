@@ -20,7 +20,7 @@ class AdminUsersTableSeeder extends Seeder
                 'name' => $fake->name,
                 'email' => $fake->email,
                 'password' => Hash::make('pass'),
-                'is_owner' => false,
+                'is_owner' => rand(true, false),
                 'created_at' => new Datetime(),
             ]);
         }

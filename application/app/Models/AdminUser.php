@@ -35,6 +35,7 @@ class AdminUser extends Authenticatable
         'name',
         'email',
         'password',
+        'is_owner',
     ];
 
     /**

@@ -1,15 +1,16 @@
 <?php
+use App\Http\Controllers\Admin\ProductsController;
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+ * |--------------------------------------------------------------------------
+ * | Web Routes
+ * |--------------------------------------------------------------------------
+ * |
+ * | Here is where you can register web routes for your application. These
+ * | routes are loaded by the RouteServiceProvider within a group which
+ * | contains the "web" middleware group. Now create something great!
+ * |
+ */
 
 /**
  * フロントサイド
@@ -21,7 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 /**
  * 管理サイド
  */
-Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
+Route::prefix('admin')->namespace('Admin')
+    ->as('admin.')
+    ->group(function () {
     Route::middleware('guest:admin')->group(function () {
         Route::get('login', 'LoginController@showLoginForm')->name('login');
         Route::post('login', 'LoginController@login')->name('login');
@@ -29,10 +32,10 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
     Route::middleware('auth:admin')->group(function () {
         Route::post('logout', 'LoginController@logout')->name('logout');
         Route::get('home', 'HomeController@index')->name('home');
-        Route::get('products', 'ProductsController@index')->name('products');
-        Route::get('product_categories', 'ProductCategoriesController@index')->name('product_categories');
-        Route::get('users', 'UsersController@index')->name('users');
-        Route::get('admin_users', 'AdminUsersController@index')->name('admin_users');
+        Route::resource('products', 'ProductsController');
+        Route::resource('product_categories', 'ProductCategoriesController');
+        Route::resource('users', 'UsersController');
+        Route::resource('admin_users', 'AdminUsersController');
     });
 });
 
