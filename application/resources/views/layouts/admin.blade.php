@@ -35,7 +35,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
 					href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-					aria-haspopup="true" aria-expanded="false"> 管理者 </a>
+					aria-haspopup="true" aria-expanded="false"> {{ Auth::user()->name }}  </a>
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#">メニュー</a>
@@ -60,8 +60,10 @@
 							href="http://localhost/admin/product_categories"> 商品カテゴリ管理 </a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="http://localhost/admin/users"> 顧客管理 </a></li>
+
 						<li class="nav-item"><a class="nav-link"
 							href="http://localhost/admin/admin_users"> 管理者管理 </a></li>
+
 					</ul>
 				</div>
 			</nav>

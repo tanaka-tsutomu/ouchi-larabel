@@ -16,6 +16,10 @@ use App\Http\Controllers\Admin\ProductsController;
  * フロントサイド
  */
 Auth::routes();
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
+//Route::post('/password/reset', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('/password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -42,5 +46,8 @@ Route::prefix('admin')->namespace('Admin')
 /**
  * リダイレクト
  */
-Route::redirect('/', '/home');
+Route::redirect('/', 'home');
 Route::redirect('/admin', '/admin/home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
