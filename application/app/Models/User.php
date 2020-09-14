@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\CanResetPassword;
+use App\Notifications\PasswordResetNotification;
 
 /**
  * App\Models\User
@@ -44,6 +46,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image_path'
     ];
 
     /**
@@ -64,4 +67,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Override to send for password reset notification.
+     *
+     * @param [type] $token
+     * @return void
+     */
+}
+class sendPasswordResetNotification{
+    public function sendPasswordResetNotification($token)
+    {
+    $this->notify(new PasswordResetNotification($token));
+    }
 }
