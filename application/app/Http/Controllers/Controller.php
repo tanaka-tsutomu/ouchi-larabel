@@ -11,3 +11,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
+
+namespace App\Http\Controllers\front;
+
+use App\Models\Product;
+use App\Models\ProductCategory;

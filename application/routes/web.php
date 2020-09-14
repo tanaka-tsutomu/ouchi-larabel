@@ -18,11 +18,18 @@ use App\Http\Controllers\Admin\ProductsController;
 Auth::routes();
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 
-//Route::post('/password/reset', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('/password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::name('front')->namespace('front')
+    ->group(function () {
+        Route::middleware('auth')->group(function () {
+            Route::resource('products', 'ProductsController');
+            Route::resource('user', 'UserController');
+            Route::resource('wish_products', 'WishProductsController');
+        });
+    });
 /**
  * 管理サイド
  */
@@ -48,6 +55,3 @@ Route::prefix('admin')->namespace('Admin')
  */
 Route::redirect('/', 'home');
 Route::redirect('/admin', '/admin/home');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

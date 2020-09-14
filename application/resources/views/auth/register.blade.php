@@ -61,6 +61,14 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+					        <label for="image_path" class="col-md-4 col-form-label text-md-right">イメージ</label>
+
+                            <div class="col-md-6">
+                                <input type="file" class="form-control-file" id="image_path" name="image_path">
+                            </div>
+				        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

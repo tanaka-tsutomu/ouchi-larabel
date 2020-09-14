@@ -38,7 +38,7 @@
 					aria-haspopup="true" aria-expanded="false"> {{ Auth::user()->name }}  </a>
 					<div class="dropdown-menu dropdown-menu-right"
 						aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">メニュー</a>
+						<a class="dropdown-item" href="http://localhost/admin/admin_users/{{ Auth::user()->id }} ">管理者情報</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#"
 							onclick="event.preventDefault();document.getElementById('logout-form').submit();">ログアウト</a>
